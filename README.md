@@ -1,112 +1,68 @@
-## NAME   : PARANTHAMAN S
-## REG_NO : 212224040232
-```
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Registration Form</title>
-    <style>
-        body {
-            background-color: #f0f8ff;
-            font-family: Arial;
-        }
-        .form-container {
-            background-color: #e0ffff;
-            width: 600px;
-            margin: auto;
-            padding: 20px;
-            border-radius: 10px;
-        }
-        h2 {
-            text-align: center;
-            color: blue;
-        }
-        label {
-            display: block;
-            margin-top: 10px;
-        }
-        input[type="text"], input[type="date"], select, textarea {
-            width: 98%;
-            padding: 5px;
-            margin-top: 5px;
-        }
-        .radio-group, .checkbox-group {
-            display: flex;
-            gap: 10px;
-            margin-top: 5px;
-        }
-        .buttons {
-            margin-top: 20px;
-            text-align: center;
-        }
-    </style>
-</head>
-<body>
+# HALF_ADDER_SUBTRACTOR
 
-<div class="form-container">
-    <h2>Registration Form</h2>
-    <form>
-        <label>First Name*: <input type="text" name="firstname" required></label>
-        <label>Last Name*: <input type="text" name="lastname" required></label>
-        
-        <label>Gender*:</label>
-        <div class="radio-group">
-            <label><input type="radio" name="gender" required> Male</label>
-            <label><input type="radio" name="gender"> Female</label>
-            <label><input type="radio" name="gender"> Transgender</label>
-        </div>
+Implementation-of-Half-Adder-and-Half Subtractor-circuit
 
-        <label>Date of Birth*: <input type="date" id="dob" required></label>
-        
-        <label>Age: <input type="text" id="age" readonly></label>
+*AIM:*
 
-        <label>Nationality*:
-            <select required>
-                <option value="">--Choose an option--</option>
-                <option value="Indian">Indian</option>
-                <option value="Other">Other</option>
-            </select>
-        </label>
+To design a half adder and half subtractor circuit and verify its truth table in Quartus using Verilog programming.
 
-        <label>Educational Qualification*:</label>
-        <div class="checkbox-group">
-            <label><input type="checkbox" name="qualification"> +2</label>
-            <label><input type="checkbox" name="qualification"> Diploma</label>
-            <label><input type="checkbox" name="qualification"> UG</label>
-            <label><input type="checkbox" name="qualification"> PG</label>
-        </div>
+*Equipments Required:*
 
-        <label>Upload Your Resume*:
-            <input type="file" required>
-        </label>
+Hardware – PCs, Cyclone II , USB flasher 
 
-        <label>Declaration*:
-            <textarea rows="3" required></textarea>
-        </label>
+Software – Quartus prime Theory Adders are digital circuits that carry out the addition of numbers.
 
-        <div class="buttons">
-            <input type="submit" value="Submit">
-            <input type="reset" value="Reset">
-        </div>
-    </form>
-</div>
+*Half Adder*
 
-<script>
-    document.getElementById("dob").addEventListener("change", function () {
-        const dob = new Date(this.value);
-        const today = new Date();
-        let age = today.getFullYear() - dob.getFullYear();
-        const monthDiff = today.getMonth() - dob.getMonth();
-        if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) {
-            age--;
-        }
-        document.getElementById("age").value = age;
-    });
-</script>
+Half adder is a combinational circuit that performs simple addition of two binary numbers. The input variables designate the augend and addend bits; the output variables produce the sum and carry. It is necessary to specify two output variables because the result may consist of two binary digits.
 
-</body>
-</html>
-```
+Sum = A’B+AB’ =A ⊕ B Carry = AB
 
-## OUTPUT:
-![Screenshot 2025-05-06 103142](https://github.com/user-attachments/assets/c22d733d-51a7-40af-aa81-c558fbf6ec85)
+![image](https://github.com/naavaneetha/HALF_ADDER_SUBTRACTOR/assets/154305477/bd4a0b2c-cdbc-4184-ab08-81578f121e1f)
+
+Figure -01 HALF ADDER
+
+*Half Subtractor*
+
+The half-subtractor is a combinational circuit which is used to perform subtraction of two bits. It has two inputs, X (minuend) and Y (subtrahend) and two outputs D (difference) and B (borrow). To perform x - y, we have to check the relative magnitudes of x and y. If x ;;, y, we have three possibilities: 0 - 0 = 0, 1 - 0 = 1, and 1 - I = 0. The result is called the difference bit. If x < y, we have 0 - I, and it is necessary to borrow a 1 from the next higher stage. The I borrowed from the next higher stage adds 2 to the minuend bit, just as in the decimal system a borrow adds 10 to a minuend digit. With the minuend equal to 2, the difference becomes 2 - I = 1. The half-subtractor needs two outputs. One output generates the difference and will be designated by the symbol D. The second output, designated B for borrow, generates the binary signal that informs the next stage that a I has been borrowed. 
+
+Diff = A’B+AB’ =A ⊕ B
+Borrow = A’B
+
+ ![image](https://github.com/naavaneetha/HALF_ADDER_SUBTRACTOR/assets/154305477/d76b099c-513f-4e7c-843a-e2fd028a531a)
+
+Figure -02 HALF Subtractor
+
+*Truthtable*
+![para exp 3 truth table](https://github.com/user-attachments/assets/0976de96-940b-4cfe-a0be-4e7760001053)
+
+*Procedure*
+
+1.	Type the program in Quartus software.
+
+2.	Compile and run the program.
+
+3.	Generate the RTL schematic and save the logic diagram.
+
+4.	Create nodes for inputs and outputs to generate the timing diagram.
+
+5.	For different input combinations generate the timing diagram.
+
+
+*Program:*
+
+/* Program to design 
+![para exp 3 program](https://github.com/user-attachments/assets/d5c23870-4868-448a-9f36-cf47c087f2f6)
+a half adder and full adder circuit and verify its truth table in quartus using Verilog programming.
+
+*Developed by:Paranthaman S RegisterNumber:24900681*
+
+*RTL Schematic*
+![para exp 3 rtl output](https://github.com/user-attachments/assets/544fcf92-ca86-4cba-9686-c837d3d0c6b1)
+
+*Output/TIMING Waveform*
+![para exp 3 timing waveform](https://github.com/user-attachments/assets/7f0275fc-cbd4-496a-be07-bdc53da8125c)
+
+*Result:*
+
+Thus the Implementation-of-Half-Adder-and-Half Subtractor-circuit
